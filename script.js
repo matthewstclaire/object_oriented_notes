@@ -22,17 +22,33 @@
 // DATA CAR 1: 'BMW' going at 120 km/h
 // DATA CAR 2: 'Mercedes' going at 95 km/h
 
-const Car = function (make, speed) {
-  this.make = make;
-  this.speed = speed;
-};
+// const Car = function (make, speed) {
+//   this.make = make;
+//   this.speed = speed;
+// };
 
-Car.prototype.accelerate = function () {
-  this.speed += 10;
-  console.log(`${this.speed} is how much faster you are going.`);
-};
+// Car.prototype.accelerate = function () {
+//   this.speed += 10;
+//   console.log(`${this.speed} is how much faster you are going.`);
+// };
 
-const car1 = new Car('bmw', 120);
+// const car1 = new Car('bmw', 120);
 
-car1.accelerate();
-car1.accelerate();
+// car1.accelerate();
+// car1.accelerate();
+
+//class declaration
+class PersonClass {
+  constructor(name, birthdate) {
+    this.name = name;
+    this.birthdate = birthdate;
+  }
+  calcAge() {
+    console.log(2037 - this.birthdate);
+  }
+}
+
+const matt = new PersonClass('Matt', 1993);
+console.log(matt);
+
+matt.calcAge();
