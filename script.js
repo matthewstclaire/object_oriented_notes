@@ -38,17 +38,36 @@
 // car1.accelerate();
 
 //class declaration
-class PersonClass {
-  constructor(name, birthdate) {
-    this.name = name;
-    this.birthdate = birthdate;
-  }
-  calcAge() {
-    console.log(2037 - this.birthdate);
-  }
-}
+// class PersonClass {
+//   constructor(name, birthdate) {
+//     this.name = name;
+//     this.birthdate = birthdate;
+//   }
+//   calcAge() {
+//     console.log(2037 - this.birthdate);
+//   }
+// }
 
-const matt = new PersonClass('Matt', 1993);
-console.log(matt);
+// const matt = new PersonClass('Matt', 1993);
+// console.log(matt);
 
-matt.calcAge();
+// matt.calcAge();
+
+//reading properties. Awesome way to do it.
+const account = {
+  owner: 'Matt',
+  movements: [200, 530, 120, 300],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+  //always needs one param
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+account.latest = 50;
+console.log(account.movements);
